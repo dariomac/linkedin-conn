@@ -1,0 +1,11 @@
+node_modules/
+dist/*
+.env
+.env.test
+.env.dev
+.env.staging
+.env.production
+**/.DS_Store
+**/.vs
+**/.vscode
+!**/.vscode/tasks.json

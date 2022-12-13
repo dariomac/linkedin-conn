@@ -1,0 +1,64 @@
+{
+  "name": "linkedin-test",
+  "version": "1.0.0",
+  "description": "NodeJS & Typescript boilerplate",
+  "engines": {
+    "node": "14.17.0"
+  },
+  "main": "dist/index.js",
+  "scripts": {
+    "lint": "tsc --noEmit && eslint \"src/**/*.{js,ts}\"",
+    "tsc": "tsc  --forceConsistentCasingInFileNames",
+    "build": "npm run lint && npm run tsc",
+    "dev": "PORT=$(free-port -p 3000 -s 3020) nodemon",
+    "test": "ENV=test mocha --require ts-node/register tests/**/**/**/*.*",
+    "start": "node dist/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@sentry/node": "^7.25.0",
+    "@types/date-fns": "^2.6.0",
+    "axios": "^1.2.1",
+    "dotenv": "^16.0.3",
+    "dotenv-cli": "^6.0.0",
+    "express": "^4.18.2",
+    "find-free-port-cli": "^0.1.0",
+    "linkedin-private-api": "^1.1.2",
+    "nodemon": "^2.0.20",
+    "pino": "^8.7.0",
+    "pino-pretty": "^9.1.1"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.3.4",
+    "@types/express": "^4.17.14",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^18.11.13",
+    "@types/pino": "^7.0.5",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "@typescript-eslint/parser": "^5.46.1",
+    "chai": "^4.3.7",
+    "eslint": "^8.29.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.1.0",
+    "mocha": "^10.2.0",
+    "prettier": "^2.8.1",
+    "supertest": "^6.3.3",
+    "ts-node": "^10.9.1",
+    "tsconfig-paths": "^4.1.1",
+    "typescript": "^4.9.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts}": [
+      "eslint --fix"
+    ]
+  }
+}
